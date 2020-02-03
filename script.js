@@ -41,13 +41,14 @@ document.addEventListener('click', function(e) {
         e.target.style.display="none";
     }
     if(e.target.classList.contains('open_manager')) {
-        // openManager();
+        openManager();
     }
 })
 
+// open bookmark manager at app folder location
 function openManager() {
     chrome.storage.local.get(['lfId'], function(result) {
-        window.location.href=`chrome://bookmarks/?id=${result.lfId}`;
+        chrome.tabs.update(null, {url:`chrome://bookmarks?id=${result.lfId}`});
     });
 }
 
