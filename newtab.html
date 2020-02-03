@@ -7,8 +7,9 @@
     <title>New Tab</title>
   </head>
   <body>
-    <img id="fish" src="" style="width: 100px; height: auto;"><br><br>
-    <span id="random">Open a random bookmark from your entire collection</span> or browse your saved bookmarks below. You can manage links on display using the <span class="open_manager">Chrome Bookmarks Manager</span> and navigating to the Linkfish folder.
+    <div>
+      <div id="fish" class="open_random" style="font-size: 2.5em; cursor: pointer; display: inline-block;">🐠</div>
+    </div> 
     <div id="new_bm_form_container" style="display: none">
       <div id="new_bm_form">
         <input type="url" id="new_bm_url" placeholder="paste URL" required>
@@ -17,6 +18,9 @@
       </div>
     </div>
     <div id="container">
+    </div>
+    <div class="full">
+      <a class="open_manager" href="#">Manage link sets…</a>
     </div>
     <div id="event-log"></div>
   </body>

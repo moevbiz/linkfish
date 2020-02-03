@@ -34,7 +34,7 @@ document.addEventListener('click', function(e) {
     if(e.target.classList.contains('add_bookmark_to')) {
         newBookmark(e);
     }
-    if(e.target.id == 'random') {
+    if(e.target.classList.contains('open_random')) {
         openRandomBookmark();
     }
     if(e.target.id == 'new_bm_form_container') {
