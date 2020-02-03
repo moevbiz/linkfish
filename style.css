@@ -57,7 +57,7 @@ body {
     transform: scaleX(-1);
   }
 
-  #container {
+  .grid {
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
