@@ -1,0 +1,55 @@
+.bookmark_title {
+    cursor: pointer;
+  }
+  .hovericon {
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity .1s linear;
+  }
+  .bookmark_title:hover .hovericon {
+    opacity: .5;
+    pointer-events: all;
+  }
+  .bookmark_title .hovericon:hover {
+    opacity: 1;
+  }
+
+  .children_loaded ul:not(:first-child) {
+    border-left: 1px solid lightgrey;
+    margin: 5px 0;
+  }
+
+  #new_bm_form_container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.6);
+  }
+  #new_bm_form {
+    position: absolute;
+    /* text-align: center; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #random {
+    cursor: pointer;
+  }
+
+  #container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(20px, auto);
+  }
+  ul:before{
+    content:attr(aria-label);
+  }
+  ul.linkset {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
