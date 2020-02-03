@@ -76,10 +76,17 @@ function openManager() {
     function appGetBookmarks() {
         chrome.storage.local.get(['lfId'], function(result) {
             console.log(result.lfId);
-            appGetChildren(result.lfId);
+            let lfId = result.lfId;
+            appGetChildren(lfId);
         });
         function appGetChildren(element) {
             chrome.bookmarks.getChildren(element, function(children) {
+                if (children.length == 0) {
+                    var container = document.getElementById('container');
+                    var el = document.createElement('p');
+                        el.innerHTML = 'Nothing here yet.'
+                    container.appendChild(el);
+                };
                 children.forEach(function(child) {
                     if (!child.url) {
                         var container = document.getElementById('container');

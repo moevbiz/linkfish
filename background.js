@@ -72,4 +72,7 @@ chrome.runtime.onInstalled.addListener(function() {
 
 function onBookmarkAdded(bookmarkItem) {
   console.log("Bookmark addded added with ID: " + bookmarkItem.id, bookmarkItem.title);
+  chrome.storage.local.set({lfId: bookmarkItem.id}, function() {
+    console.log(appName + ' folder ID is set to ' + bookmarkItem.id);
+  });
 }
