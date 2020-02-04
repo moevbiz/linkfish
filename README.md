@@ -11,7 +11,7 @@ Linkfish replaces the default Chrome "most visited sites" page when you open a n
 
 ### How to install
 
-Clone or download the repository somewhere on your computer. Open the Google Chrome Extension Manager by visiting chrome://extensions/ or selecting "Window" -> "Extensions" in the menu bar. Enable "developer mode" in the top right corner. Click on "Load Unpacked" and navigate to the "Linkfish" folder location, then select the folder. 
+Clone or download the repository somewhere on your computer (unpack the zip if you downloaded the archive file). Open the Google Chrome Extension Manager by visiting chrome://extensions/ or selecting "Window" -> "Extensions" in the menu bar. Enable "developer mode" in the top right corner. Click on "Load Unpacked" and navigate to the "Linkfish" folder location, then select the folder. 
 
 ### How to manage
 
