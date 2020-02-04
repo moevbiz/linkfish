@@ -1,33 +1,47 @@
-function randomFish() {
-    var dir = "./images/";
-    var fish = [
-        '15.png',
-        '224.png',
-        '264.png',
-        '315.png',
-        '360.png',
-        '1098.png',
-        '1126.png'
-    ];
-    var key = Math.floor(Math.random() * fish.length);
-    var rand = fish[key];
-    var url = dir + rand;
-    console.log(url);
-    document.getElementById('fish').src = url;
-}
-
-randomFish();
-
 // generateBookmarkTree();
 
-function generateBookmarkTree() {
-    chrome.bookmarks.getTree(function(bookmarks) {
-        bookmarks.forEach(function(bookmark) {
-            marks.push(bookmark);
-        })
-    })
-    console.log(marks);
-}
+
+// // import Bookmarks from JSON
+// function importBookmarks(url) {
+//     chrome.storage.local.get(['lfId'], function(result) {
+//       localStorage.setItem('LFID', result.lfId);
+//     }),
+    
+//     fetch(url)
+//         .then(
+//             function(response) {
+//             if (response.status !== 200) {
+//                 console.log('Error Status Code: ' +
+//                 response.status);
+//                 return;
+//             }
+
+//             response.json().then(function(data) {
+//                 console.log(data);
+//                 for (var el in data) {
+//                     chrome.bookmarks.create({
+//                         parentId: localStorage.getItem('LFID'),
+//                         title: el,
+//                         url: null,
+//                     }, onFolderCreated)
+//                     function onFolderCreated(folder) {
+//                         console.log(data[folder.title]);
+//                         data[folder.title].forEach(function(bookmark) {
+//                             chrome.bookmarks.create({
+//                                 parentId: folder.id,
+//                                 title: bookmark.name,
+//                                 url: bookmark.url
+//                             })
+//                         })
+//                     }
+//                 }
+//             });
+//             }
+//         )
+//         .catch(function(err) {
+//             console.log('Fetch Error', err);
+//         });
+// }
 
 document.addEventListener('click', function(e) {
     console.log(e.target);
@@ -43,6 +57,9 @@ document.addEventListener('click', function(e) {
     if(e.target.classList.contains('open_manager')) {
         openManager();
     }
+    if(e.target.classList.contains('import_JSON')) {
+        importBookmarks('import.json');
+    }
 })
 
 // open bookmark manager at app folder location
@@ -52,6 +69,7 @@ function openManager() {
     });
 }
 
+// open a random bookmark
     var openRandomBookmark = function(bookmarks) {
         var urls = [];
         chrome.bookmarks.getTree(function(bookmarks) {
@@ -73,6 +91,7 @@ function openManager() {
         })
     }
 
+    // app view
     function appGetBookmarks() {
         chrome.storage.local.get(['lfId'], function(result) {
             console.log(result.lfId);

@@ -1,22 +1,3 @@
-let importedBookmarks = {
-  'Tech News': [
-    {
-      'name': 'Awwwards',
-      'url': 'https://awwwards.com'
-    },
-    {
-      'name': 'Chrome',
-      'url': 'https://google.com'
-    }
-  ],
-  'Design News': [
-    {
-      'name': 'Pina',
-      'url': 'https://pinavienna.eu'
-    }
-  ]
-}
-
 let appName = 'Linkfish';
 
 function init() {
