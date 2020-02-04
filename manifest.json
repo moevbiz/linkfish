@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Linkfish is a bookmark manager for Google Chrome.",
     "author": "moev.biz",
-    "permissions": ["activeTab", "bookmarks", "storage"],
+    "permissions": ["activeTab", "bookmarks", "storage", "contextMenus"],
     "chrome_url_overrides": {  
         "newtab": "newtab.html"
     },
@@ -14,6 +14,9 @@
     "icons": { 
       "48": "icon/icons8-fish-48.png",
       "96": "icon/icons8-fish-96.png"
+    },
+    "browser_action": {
+      "default_icon": "icon/icons8-fish-96.png"
     },
     "manifest_version": 2
   }
