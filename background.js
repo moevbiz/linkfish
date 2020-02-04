@@ -46,6 +46,32 @@ function createLfFolder() {
   }, onBookmarkAdded)
 }
 
+var openRandomBookmark = function(bookmarks) {
+  var urls = [];
+  chrome.bookmarks.getTree(function(bookmarks) {
+      addUrls(bookmarks, urls);
+      var key = Math.floor(Math.random() * urls.length);
+      var rand = urls[key];
+      chrome.tabs.update(null, {url: rand});
+  })
+}
+
+function addUrls(bookmarks, array) {
+  bookmarks.forEach(function(bookmark) {
+      if(bookmark.children) {
+          addUrls(bookmark.children, array);
+          // console.log(bookmark);
+      } else {
+          array.push(bookmark.url)
+      }
+  })
+}
+
+chrome.browserAction.onClicked.addListener(function() {
+  console.log('fish click')
+  openRandomBookmark()
+});
+
 chrome.runtime.onInstalled.addListener(function() {
   init();
   console.log('Extension installed');
