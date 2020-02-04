@@ -12,8 +12,8 @@
       "persistent": false
     },
     "icons": { 
-      "48": "icons8-fish-48.png",
-      "96": "icons8-fish-96.png"
+      "48": "icon/icons8-fish-48.png",
+      "96": "icon/icons8-fish-96.png"
     },
     "manifest_version": 2
   }
