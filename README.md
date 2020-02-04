@@ -16,3 +16,6 @@ On install, Linkfish will check if there is already a folder named 'Linkfish' so
 If you create a folder inside a Link Set folder, it will be displayed as a separate Link Set on the Linkfish page.
 
 Happy browsing!
+
+
+<a target="_blank" href="https://icons8.com/icons/set/fish-emoji">Fish icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
