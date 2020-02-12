@@ -1,5 +1,5 @@
 # 🐟
-A Google Chrome extension that helps you organise bookmarks more consciously.
+A Google Chrome (and similar chromium browsers) extension that helps you organise bookmarks more consciously.
 Linkfish replaces the default Chrome "most visited sites" page when you open a new tab.
 
 ## How to use
