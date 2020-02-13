@@ -14,7 +14,7 @@ Clone or download the repository somewhere on your computer (unpack the zip if y
 
 ## How to manage
 
-On install, Linkfish will check if there is already a folder named 'Linkfish' somewhere in your bookmark tree. If not, it will automatically create it. The 'Linkfish' folder is your base for organisation of Link Sets. Inside this main folder, create a folder for each Link Set you want to display on the *new tab*-page and name it accordingly. To add a bookmark to a Link Set, simply add it into to the corresponding folder.
+Linkfish will create a homonymous folder in your bookmark tree, which will be used for storing Link Sets. Create a folder for each Link Set you want to display on the *new tab*-page. To add a bookmark to a Link Set, simply add it into to the corresponding folder.
 
 If you create a folder inside a Link Set folder, it will be displayed as a separate Link Set on the Linkfish page.
 
@@ -22,4 +22,4 @@ Happy browsing!
 
 ___
 
-<a target="_blank" href="https://icons8.com/icons/set/fish-emoji">Fish icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icons/set/fish-emoji">Fish icon</a> by <a target="_blank" href="https://icons8.com">Icons8</a>
