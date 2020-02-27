@@ -1,5 +1,5 @@
 # 🐟
-A Google Chrome (and similar chromium browsers) extension that helps you organise bookmarks more consciously.
+A Google Chrome extension that helps you organise bookmarks more consciously.
 
 ## How to use
 
