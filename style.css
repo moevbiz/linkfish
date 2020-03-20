@@ -124,10 +124,12 @@ body[data-theme="light"] {
     transition: opacity .1s linear;
   }
     #options_panel.hidden {
+      pointer-events: none;
       display: block;
       opacity: 0;
     }
     #options_panel.toggled {
+      pointer-events: all;
       display: block;
       opacity: 1;
     }
