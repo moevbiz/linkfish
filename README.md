@@ -1,9 +1,7 @@
 # 🐟
-A Google Chrome extension that helps you organise bookmarks more consciously.
+A Google Chrome extension that helps you organise bookmarks more consciously. The extension replaces the default Chrome "most visited sites" page when you open a new tab.
 
 ## How to use
-
-The extension replaces the default Chrome "most visited sites" page when you open a new tab.
 
 - Store bookmarks in sets, enabling quick access. They can, for example, be groups of your frequently visited pages, or collections of pages you would like to visit more regularly. You will be reminded of their existence every time you open a new tab. Sets are managed using your browser's bookmark manager.
 
