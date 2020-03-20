@@ -10,20 +10,36 @@
     <div>
       <div id="fish" class="open_random" style="font-size: 2.5em; cursor: pointer; display: inline-block;">🐟</div>
     </div> 
-    <div id="new_bm_form_container" style="display: none">
+    <!-- <div id="new_bm_form_container" style="display: none">
       <div id="new_bm_form">
         <input type="url" id="new_bm_url" placeholder="paste URL" required>
         <input type="text" id="new_bm_title" placeholder="Enter a title" required>
         <button id="new_bm_submit"></button>
       </div>
-    </div>
+    </div> -->
     <div id="container" class="grid">
     </div>
     <br>
     <div class="grid">
-      <a class="open_manager" href="#">Manage…</a>
+      <a class="open_manager" href="#">Manage Bookmarks</a>
+      <a id="show_options" href="#">Settings</a>
       <a href="https://github.com/moevbiz/linkfish/blob/master/README.md">Info</a>
     </div>
     <div id="event-log"></div>
+
+    <div id="options_panel">
+      <div class="options_row">
+        Theme:
+        <select id="theme">
+          <option value="lake">Lake</option>
+          <option value="deep">Deep Sea</option>
+          <option value="dark">Classic Black</option>
+          <option value="light">Classic White</option>
+        </select>
+      </div>
+      <div class="options_row">
+        <button id="hide_options">OK</button>
+      </div>
+    </div>
   </body>
 </html>

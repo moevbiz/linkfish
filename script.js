@@ -1,50 +1,5 @@
-// generateBookmarkTree();
-
-
-// // import Bookmarks from JSON
-// function importBookmarks(url) {
-//     chrome.storage.local.get(['lfId'], function(result) {
-//       localStorage.setItem('LFID', result.lfId);
-//     }),
-    
-//     fetch(url)
-//         .then(
-//             function(response) {
-//             if (response.status !== 200) {
-//                 console.log('Error Status Code: ' +
-//                 response.status);
-//                 return;
-//             }
-
-//             response.json().then(function(data) {
-//                 console.log(data);
-//                 for (var el in data) {
-//                     chrome.bookmarks.create({
-//                         parentId: localStorage.getItem('LFID'),
-//                         title: el,
-//                         url: null,
-//                     }, onFolderCreated)
-//                     function onFolderCreated(folder) {
-//                         console.log(data[folder.title]);
-//                         data[folder.title].forEach(function(bookmark) {
-//                             chrome.bookmarks.create({
-//                                 parentId: folder.id,
-//                                 title: bookmark.name,
-//                                 url: bookmark.url
-//                             })
-//                         })
-//                     }
-//                 }
-//             });
-//             }
-//         )
-//         .catch(function(err) {
-//             console.log('Fetch Error', err);
-//         });
-// }
-
 document.addEventListener('click', function(e) {
-    console.log(e.target);
+    // console.log(e.target);
     if(e.target.classList.contains('add_bookmark_to')) {
         newBookmark(e);
     }
@@ -59,6 +14,14 @@ document.addEventListener('click', function(e) {
     }
     if(e.target.classList.contains('import_JSON')) {
         importBookmarks('import.json');
+    }
+    if(e.target.id == 'show_options') {
+        document.getElementById('options_panel').classList.add('toggled');
+        document.getElementById('options_panel').classList.remove('hidden');
+    }
+    if(e.target.id == 'hide_options') {
+        document.getElementById('options_panel').classList.add('hidden');
+        document.getElementById('options_panel').classList.remove('toggled');
     }
 })
 
@@ -134,5 +97,77 @@ function openManager() {
     }
 
     appGetBookmarks();
+
+// Saves options to chrome.storage
+function save_options() {
+  var theme = document.getElementById('theme').value;
+  chrome.storage.local.set({
+    theme: theme
+  }, function() {
+    set_theme(theme);
+  });
+}
+  
+// Restores select box and checkbox state using the preferences
+// stored in chrome.storage.
+function restore_options() {
+  // Use default value color = 'red' and likesColor = true.
+  chrome.storage.local.get({
+    theme: 'light',
+  }, function(items) {
+    set_theme(items.theme);
+    document.getElementById('theme').value = items.theme;
+  });
+}
+
+// set theme
+var set_theme = function(theme) {
+  document.body.dataset.theme = theme;
+}
+
+document.addEventListener('DOMContentLoaded', restore_options);
+document.getElementById('theme').addEventListener('change', save_options);
+
+// generateBookmarkTree();
+
+// // import Bookmarks from JSON
+// function importBookmarks(url) {
+//     chrome.storage.local.get(['lfId'], function(result) {
+//       localStorage.setItem('LFID', result.lfId);
+//     }),
     
-    // document.addEventListener('DOMContentLoaded', loadBookmarks());
+//     fetch(url)
+//         .then(
+//             function(response) {
+//             if (response.status !== 200) {
+//                 console.log('Error Status Code: ' +
+//                 response.status);
+//                 return;
+//             }
+
+//             response.json().then(function(data) {
+//                 console.log(data);
+//                 for (var el in data) {
+//                     chrome.bookmarks.create({
+//                         parentId: localStorage.getItem('LFID'),
+//                         title: el,
+//                         url: null,
+//                     }, onFolderCreated)
+//                     function onFolderCreated(folder) {
+//                         console.log(data[folder.title]);
+//                         data[folder.title].forEach(function(bookmark) {
+//                             chrome.bookmarks.create({
+//                                 parentId: folder.id,
+//                                 title: bookmark.name,
+//                                 url: bookmark.url
+//                             })
+//                         })
+//                     }
+//                 }
+//             });
+//             }
+//         )
+//         .catch(function(err) {
+//             console.log('Fetch Error', err);
+//         });
+// }

@@ -4,6 +4,24 @@ function init() {
   let hasFolder = false;
   let folderId = '';
 
+  // for debug
+  // chrome.storage.local.clear()
+
+  // check if theme has been previously set — if not, set it to preferred device scheme
+  chrome.storage.local.get('theme', function(res) {
+    if (!res.theme) {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        chrome.storage.local.set({
+          theme: 'deep',
+        }, function() {
+          console.log('theme set to DEEP')
+        })
+      }
+    } else {
+      console.log(`theme has previously been set to: ${res.theme}`)
+    }
+  });
+
   chrome.bookmarks.getTree(function(itemTree){
     itemTree.forEach(function(item){
       processNode(item);
